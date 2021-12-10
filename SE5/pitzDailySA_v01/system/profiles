@@ -1,0 +1,30 @@
+profiles
+{
+    type sets;
+    libs ( "libsampling.so" );
+    interpolationScheme cellPointFace;
+    writeControl timeStep;
+    writeInterval 100;
+    setFormat raw;
+
+    sets 
+    ( 
+	x_0H
+		{
+			type lineFace;
+			axis    xyz;
+			start    (0.000000E+00 0.000000E+00 0 );
+			end    (0.000000E+00 2.540000E-02 0 );
+		}
+	x_3H
+		{
+			type lineFace;
+			axis    xyz;
+			start  (7.6200000E-02 -2.540000E-02 0 );
+			end    (7.6200000E-02 2.540000E-02 0 );
+		}
+    );
+
+    fields ( p U nut );
+}
+

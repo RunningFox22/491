@@ -1,0 +1,24 @@
+    streamLines
+    {
+        type            streamLine;
+        libs ("libfieldFunctionObjects.so");
+    	writeControl writeTime;
+        setFormat       vtk; 
+        U U;
+        trackForward    yes;
+        fields (p U);
+        lifeTime        10000;
+//	trackLength	1e-3;
+        nSubCycle 	5;
+	bounds		(0.2 -10 -10) (0.22 10 10);
+        cloudName       particleTracks;
+
+        seedSampleSet
+        {
+            type        uniform;
+            axis        x;  //distance;
+            start       (-0.0205 0.001  0.00001);
+            end         (-0.0205 0.0251 0.00001);
+            nPoints     10;
+        }
+    }
